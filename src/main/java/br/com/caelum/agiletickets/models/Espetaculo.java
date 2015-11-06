@@ -105,16 +105,16 @@ public class Espetaculo {
 		List<Sessao> sessoes = new ArrayList<Sessao>();
 		
 		if (inicio.isAfter(fim)) {
-			//throw new IllegalArgumentException("Data inválida.");
+			throw new IllegalArgumentException("Data inválida.");
 		}
 
 		int quantidadeSessoes = 0;
 		int quantidadeDias = 1;
 		if (periodicidade.equals(Periodicidade.DIARIA)) {
-			quantidadeSessoes = Days.daysBetween(inicio, fim).getDays();
+			//quantidadeSessoes = Days.daysBetween(inicio, fim).getDays();
 		} else {
 			quantidadeSessoes = Weeks.weeksBetween(inicio, fim).getWeeks();
-			quantidadeDias = 7;
+			//quantidadeDias = 7;
 		}
 
 		for (int numeroSessao = 0; numeroSessao <= quantidadeSessoes; numeroSessao++) {
